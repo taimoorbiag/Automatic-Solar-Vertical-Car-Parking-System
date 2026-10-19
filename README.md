@@ -1,1 +1,2 @@
 # Automatic-Solar-Vertical-Car-Parking-System
+**Automatic Solar Vertical Car Parking System: This clever parking solution saves space and minimizes manual labor by using a vertical lifting mechanism to park and retrieve cars in different levels. The system is an eco-friendly and energy-efficient solution since its motors and control units are powered by solar energy. It can be outfitted with sensors, a microcontroller, and automated controls to enhance vehicle management, safety, and parking effectiveness.**
