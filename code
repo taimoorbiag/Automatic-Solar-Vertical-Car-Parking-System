@@ -1,0 +1,537 @@
+#include <Keypad.h>
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
+LiquidCrystal_I2C lcd(0x27, 2, 1, 0, 4, 5, 6, 7, 3, POSITIVE); // Set the LCD I2C
+address
+const byte ROWS = 4; //four rows
+const byte COLS = 4; //four columns
+char keys[ROWS][COLS] = {
+ {'1','2','3','A'},
+ {'4','5','6','B'},
+ {'7','8','9','C'},
+ {'*','0','#','D'}
+};
+byte rowPins[ROWS] = {9, 8, 7, 6}; //connect to the row pinouts of the keypad
+byte colPins[COLS] = {5, 4, 3, 2}; //connect to the column pinouts of the keypad
+Keypad keypad = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );
+const int m = 0;
+const int L1 = 11;
+const int L2 = 12;
+const int L3 = 13;
+const int L4 = A0;
+const int L5 = A1;
+const int L6 = A2;
+const int L7 = A3;
+const int L8 = 10;
+int logic1 = 0;
+int logic2 = 0;
+int logic3 = 0;
+int logic4 = 0;
+int logic5 = 0;
+int logic6 = 0;
+int logic7 = 0;
+int logic8 = 0;
+void setup() {
+ //Serial.begin(9600);
+ pinMode(L1, INPUT_PULLUP);
+ pinMode(L2, INPUT_PULLUP);
+ pinMode(L3, INPUT_PULLUP);
+ pinMode(L4, INPUT_PULLUP);
+ pinMode(L5, INPUT_PULLUP);
+ pinMode(L6, INPUT_PULLUP);
+ pinMode(L7, INPUT_PULLUP);
+pinMode(L8, INPUT_PULLUP);
+pinMode(m, OUTPUT);
+lcd.begin(20,4);
+ lcd.backlight();
+}
+char key = 0;
+void loop() {
+digitalWrite(m,HIGH);
+ lcd.clear();
+ lcd.setCursor(0,0);
+ lcd.print("Welcome to vertical");
+ lcd.setCursor(4,1);
+ lcd.print("car Parking");
+ lcd.setCursor(0,2);
+cd.print("Press 1 For ENTER");
+ lcd.setCursor(0,3);
+ lcd.print("and 3 for Exit");
+ Serial.println("Welcome to vertical car Parking \n");
+ Serial.println("Press ENTER For 1 and Exit For 3 \n");
+ delay (500);
+car:
+key = keypad.getKey();
+ if (key == '1')
+ {
+Serial.print("Please Choose Your Floor \n ");
+ Serial.print("\n \n \n ");
+ lcd.clear();
+ lcd.setCursor(3,0);
+ lcd.print("Choose Floor");
+ delay(500);
+ lcd.clear();
+ lcd.setCursor(0,0);
+ lcd.print("1 for GF");
+ lcd.setCursor(10,0);
+ lcd.print("2 for 1F");
+ lcd.setCursor(0,1);
+ lcd.print("3 for 2F");
+ lcd.setCursor(10,1)
+cd.print("4 for 3F");
+ lcd.setCursor(0,2);
+ lcd.print("5 for 4F");
+ lcd.setCursor(10,2);
+ lcd.print("6 for 5F");
+ lcd.setCursor(0,3);
+ lcd.print("7 for 6F");
+ lcd.setCursor(10,3);
+ lcd.print("8 for 7F");
+ delay(500);
+ FTG
+}
+ else if (key == '3')
+ {
+ lcd.clear();
+ Serial.println("Car exit \n");
+ Serial.print("\n \n \n ");
+ lcd.setCursor(0,2);
+ lcd.print("Please Enter a Floor");
+ exi();
+ }
+ else
+ {
+ goto car;
+}
+}
+GTF:
+#include <Keypad.h>
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
+LiquidCrystal_I2C lcd(0x27, 2, 1, 0, 4, 5, 6, 7, 3, POSITIVE); // Set the LCD I2C
+address
+const byte ROWS = 4; //four rows
+const byte COLS = 4; //four columns
+char keys[ROWS][COLS] = {
+ {'1','2','3','A'},
+ {'4','5','6','B'},
+ {'7','8','9','C'},
+ {'*','0','#','D'}
+};
+byte rowPins[ROWS] = {9, 8, 7, 6}; //connect to the row pinouts of the keypad
+byte colPins[COLS] = {5, 4, 3, 2}; //connect to the column pinouts of the keypad
+Keypad keypad = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );
+const int m = 0;
+const int L1 = 11;
+const int L2 = 12;
+const int L3 = 13;
+const int L4 = A0;
+const int L5 = A1;
+const int L6 = A2;
+const int L7 = A3;
+const int L8 = 10;
+int logic1 = 0;
+int logic2 = 0;
+int logic3 = 0;
+int logic4 = 0;
+int logic5 = 0;
+int logic6 = 0;
+int logic7 = 0;
+int logic8 = 0;
+void setup() {
+ //Serial.begin(9600);
+pinMode(L1, INPUT_PULLUP);
+
+pinMode(L2, INPUT_PULLUP);
+ pinMode(L3, INPUT_PULLUP);
+ pinMode(L4, INPUT_PULLUP);
+ pinMode(L5, INPUT_PULLUP);
+ pinMode(L6, INPUT_PULLUP);
+ pinMode(L7, INPUT_PULLUP);
+pinMode(L8, INPUT_PULLUP);
+pinMode(m, OUTPUT);
+lcd.begin(20,4); 
+cd.backlight();
+}
+char key = 0;
+void loop() {
+ digitalWrite(m,HIGH);
+ lcd.clear();
+ lcd.setCursor(0,0);
+ lcd.print("Welcome to vertical");
+ lcd.setCursor(4,1);
+ lcd.print("car Parking");
+ lcd.setCursor(0,2);
+ lcd.print("Press 1 For ENTER");
+ lcd.setCursor(0,3);
+ lcd.print("and 3 for Exit");
+ Serial.println("Welcome to vertical car Parking \n"); 
+Serial.println("Press ENTER For 1 and Exit For 3 \n");
+ delay (500);
+ car:
+ key = keypad.getKey();
+ if (key == '1')
+ {
+ Serial.print("Please Choose Your Floor \n ");
+ Serial.print("\n \n \n ");
+ lcd.clear();
+lcd.setCursor(3,0);
+ lcd.print("Choose Floor");
+ delay(500);
+ lcd.clear();
+ lcd.setCursor(0,0);
+ lcd.print("1 for GF");
+ lcd.setCursor(10,0);
+ lcd.print("2 for 1F");
+ lcd.setCursor(0,1);
+ lcd.print("3 for 2F");
+ lcd.setCursor(10,1);
+ lcd.print("4 for 3F");
+ lcd.setCursor(0,2);
+ lcd.print("5 for 4F");
+ lcd.setCursor(10,2);
+ lcd.print("6 for 5F");
+ lcd.setCursor(0,3);
+lcd.print("7 for 6F");
+ lcd.setCursor(10,3);
+ lcd.print("8 for 7F");
+ delay(500);
+ FTG();
+
+}
+ else if (key == '3')
+{
+ lcd.clear();
+ Serial.println("Car exit \n");
+ Serial.print("\n \n \n ");
+ lcd.setCursor(0,2);
+ lcd.print("Please Enter a Floor");
+ exi();
+ }
+ else
+ {
+ goto car;
+ }
+}
+FTG
+#include <Keypad.h>
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
+LiquidCrystal_I2C lcd(0x27, 2, 1, 0, 4, 5, 6, 7, 3, POSITIVE); // Set the LCD I2C
+address
+const byte ROWS = 4; //four rows
+const byte COLS = 4; //four columns
+char keys[ROWS][COLS] = {
+ {'1','2','3','A'},
+ {'4','5','6','B'},
+{'7','8','9','C'},
+ {'*','0','#','D'}
+};
+byte rowPins[ROWS] = {9, 8, 7, 6}; //connect to the row pinouts of the keypad
+byte colPins[COLS] = {5, 4, 3, 2}; //connect to the column pinouts of the keypad
+Keypad keypad = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );
+const int m = 0;
+const int L1 = 11;
+const int L2 = 12;
+const int L3 = 13;
+const int L4 = A0;
+const int L5 = A1;
+const int L6 = A2;
+const int L7 = A3;
+const int L8 = 10;
+int logic1 = 0;
+int logic2 = 0;
+int logic3 = 0;
+int logic4 = 0;
+int logic5 = 0;
+int logic6 = 0;
+int logic7 = 0;
+int logic8 = 0;
+void setup() {
+//Serial.begin(9600);
+ pinMode(L1, INPUT_PULLUP);
+ pinMode(L2, INPUT_PULLUP);
+ pinMode(L3, INPUT_PULLUP);
+ pinMode(L4, INPUT_PULLUP);
+ pinMode(L5, INPUT_PULLUP);
+ pinMode(L6, INPUT_PULLUP);
+ pinMode(L7, INPUT_PULLUP);
+pinMode(L8, INPUT_PULLUP);
+pinMode(m, OUTPUT);
+lcd.begin(20,4);
+ lcd.backlight();
+}
+char key = 0;
+void loop() {
+digitalWrite(m,HIGH);
+ lcd.clear();
+ lcd.setCursor(0,0);
+lcd.print("Welcome to vertical");
+ lcd.setCursor(4,1);
+ lcd.print("car Parking");
+ lcd.setCursor(0,2);
+ lcd.print("Press 1 For ENTER");
+ lcd.setCursor(0,3);
+cd.print("and 3 for Exit");
+Serial.println("Welcome to vertical car Parking \n");
+ Serial.println("Press ENTER For 1 and Exit For 3 \n");
+ delay (500);
+ car:
+ key = keypad.getKey();
+ if (key == '1')
+ {
+ Serial.print("Please Choose Your Floor \n ");
+ Serial.print("\n \n \n ");
+ lcd.clear();
+ lcd.setCursor(3,0);
+ lcd.print("Choose Floor");
+ delay(500);
+ lcd.clear();
+ lcd.setCursor(0,0);
+ lcd.print("1 for GF");
+lcd.setCursor(10,0);
+ lcd.print("2 for 1F");
+ lcd.setCursor(0,1);
+ lcd.print("3 for 2F");
+ lcd.setCursor(10,1);
+ lcd.print("4 for 3F");
+ lcd.setCursor(0,2)
+cd.print("5 for 4F");
+ lcd.setCursor(10,2);
+ lcd.print("6 for 5F");
+ lcd.setCursor(0,3);
+ lcd.print("7 for 6F");
+ lcd.setCursor(10,3);
+ lcd.print("8 for 7F");
+ delay(500);
+ FTG();
+ }
+ else if (key == '3')
+ {
+ lcd.clear();
+ Serial.println("Car exit \n");
+ Serial.print("\n \n \n ");
+ lcd.setCursor(0,2);
+ lcd.print("Please Enter a Floor");
+exi();
+ }
+ else
+ {
+ goto car;
+ }
+}
+EXI
+#include <Keypad.h>
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
+LiquidCrystal_I2C lcd(0x27, 2, 1, 0, 4, 5, 6, 7, 3, POSITIVE); // Set the LCD I2C
+address
+const byte ROWS = 4; //four rows
+const byte COLS = 4; //four columns
+char keys[ROWS][COLS] = {
+ {'1','2','3','A'},
+ {'4','5','6','B'},
+ {'7','8','9','C'},
+ {'*','0','#','D'}
+};
+byte rowPins[ROWS] = {9, 8, 7, 6}; //connect to the row pinouts of the keypad
+byte colPins[COLS] = {5, 4, 3, 2}; //connect to the column pinouts of the keypad
+Keypad keypad = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );
+const int m = 0;
+const int L1 = 11;
+const int L2 = 12;
+const int L3 = 13;
+const int L4 = A0;
+const int L5 = A1;
+const int L6 = A2;
+const int L7 = A3;
+const int L8 = 10;
+int logic1 = 0;
+int logic2 = 0;
+int logic3 = 0;
+int logic4 = 0;
+int logic5 = 0;
+int logic6 = 0;
+int logic7 = 0;
+int logic8 = 0;
+void setup() {
+ //Serial.begin(9600);
+ pinMode(L1, INPUT_PULLUP);
+ pinMode(L2, INPUT_PULLUP);
+ pinMode(L3, INPUT_PULLUP);
+ pinMode(L4, INPUT_PULLUP);
+ pinMode(L5, INPUT_PULLUP);
+ pinMode(L6, INPUT_PULLUP);
+pinMode(L7, INPUT_PULLUP);
+pinMode(L8, INPUT_PULLUP);
+pinMode(m, OUTPUT);
+ lcd.begin(20,4);
+ lcd.backlight(); }
+char key = 0;
+void loop() {
+ digitalWrite(m,HIGH);
+ lcd.clear();
+ lcd.setCursor(0,0);
+ lcd.print("Welcome to vertical");
+ lcd.setCursor(4,1);
+ lcd.print("car Parking");
+ lcd.setCursor(0,2);
+ lcd.print("Press 1 For ENTER");
+ lcd.setCursor(0,3);
+ lcd.print("and 3 for Exit");
+ Serial.println("Welcome to vertical car Parking \n");
+ Serial.println("Press ENTER For 1 and Exit For 3 \n");
+ delay (500);
+car:
+ key = keypad.getKey();
+if (key == '1')
+ {
+ Serial.print("Please Choose Your Floor \n ");
+ Serial.print("\n \n \n ");
+ lcd.clear();
+ lcd.setCursor(3,0);
+ lcd.print("Choose Floor");
+delay(500);
+ lcd.clear();
+ lcd.setCursor(0,0);
+ lcd.print("1 for GF");
+ lcd.setCursor(10,0);
+ lcd.print("2 for 1F");
+ lcd.setCursor(0,1);
+ lcd.print("3 for 2F");
+ lcd.setCursor(10,1);
+ lcd.print("4 for 3F");
+ lcd.setCursor(0,2);
+ lcd.print("5 for 4F");
+ lcd.setCursor(10,2);
+ lcd.print("6 for 5F");
+ lcd.setCursor(0,3);
+ lcd.print("7 for 6F");
+lcd.setCursor(10,3);
+ lcd.print("8 for 7F");
+ delay(500);
+ FTG();
+
+}
+ else if (key == '3')
+
+{
+ lcd.clear();
+Serial.println("Car exit \n");
+ Serial.print("\n \n \n ");
+ lcd.setCursor(0,2);
+ lcd.print("Please Enter a Floor");
+ exi();
+ }
+ else
+ {
+ goto car;
+ }
+}
+ENTER
+#include <Keypad.h>
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
+LiquidCrystal_I2C lcd(0x27, 2, 1, 0, 4, 5, 6, 7, 3, POSITIVE); // Set the LCD I2C
+address
+const byte ROWS = 4; //four rows
+const byte COLS = 4; //four columns
+char keys[ROWS][COLS] = {
+ {'1','2','3','A'},
+ {'4','5','6','B'},
+ {'7','8','9','C'},
+ {'*','0','#','D'}
+};
+byte rowPins[ROWS] = {9, 8, 7, 6}; //connect to the row pinouts of the keypad
+byte colPins[COLS] = {5, 4, 3, 2}; //connect to the column pinouts of the keypad
+Keypad keypad = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );
+const int m = 0;
+const int L1 = 11;
+const int L2 = 12;
+const int L3 = 13;
+const int L4 = A0;
+const int L5 = A1;
+const int L6 = A2;
+const int L7 = A3;
+const int L8 = 10;
+int logic1 = 0;
+int logic2 = 0;
+int logic3 = 0;
+int logic4 = 0;
+int logic5 = 0;
+int logic6 = 0;
+int logic7 = 0;
+int logic8 = 0;
+void setup() {
+ //Serial.begin(9600);
+ pinMode(L1, INPUT_PULLUP);
+pinMode(L2, INPUT_PULLUP);
+ pinMode(L3, INPUT_PULLUP);
+ pinMode(L4, INPUT_PULLUP);
+ pinMode(L5, INPUT_PULLUP);
+ pinMode(L6, INPUT_PULLUP);
+ pinMode(L7, INPUT_PULLUP);
+pinMode(L8, INPUT_PULLUP);
+pinMode(m, OUTPUT);
+ lcd.begin(20,4);
+ lcd.backlight();
+}
+char key = 0;
+void loop() {
+ digitalWrite(m,HIGH);
+lcd.clear();
+ lcd.setCursor(0,0);
+ lcd.print("Welcome to vertical");
+ lcd.setCursor(4,1);
+ lcd.print("car Parking");
+ lcd.setCursor(0,2);
+ lcd.print("Press 1 For ENTER");
+ lcd.setCursor(0,3);
+ lcd.print("and 3 for Exit");
+Serial.println("Welcome to vertical car Parking \n");
+ Serial.println("Press ENTER For 1 and Exit For 3 \n");
+ delay (500);
+ car:
+ key = keypad.getKey();
+ if (key == '1')
+ {
+ Serial.print("Please Choose Your Floor \n ");
+ Serial.print("\n \n \n ");
+ lcd.clear();
+ lcd.setCursor(3,0);
+ lcd.print("Choose Floor");
+ delay(500);
+ lcd.clear();
+ lcd.setCursor(0,0);
+lcd.print("1 for GF");
+ lcd.setCursor(10,0);
+ lcd.print("2 for 1F");
+ lcd.setCursor(0,1);
+ lcd.print("3 for 2F");
+ lcd.setCursor(10,1);
+ lcd.print("4 for 3F");
+ lcd.setCursor(0,2);
+ lcd.print("5 for 4F");
+lcd.setCursor(10,2);
+ lcd.print("6 for 5F");
+ lcd.setCursor(0,3);
+ lcd.print("7 for 6F");
+ lcd.setCursor(10,3);
+ lcd.print("8 for 7F");
+ delay(500);
+ FTG();
+ }
+ else if (key == '3')
+{
+ lcd.clear();
+ Serial.println("Car exit \n");
+ Serial.print("\n \n \n ");
+ lcd.setCursor(0,2);
+ lcd.print("Please Enter a Floor");
+ exi();
+ }
+ else
+ {
+ goto car;
+ }
+}
